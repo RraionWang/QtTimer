@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/favicon.png</file>
+        <file>assets/save_as_csv.png</file>
+        <file>assets/clear_table.png</file>
+        <file>assets/help.png</file>
+        <file>assets/init.png</file>
+        <file>assets/pause.png</file>
+        <file>assets/run.png</file>
+        <file>assets/sticy.png</file>
+        <file>assets/unstcky.png</file>
+    </qresource>
+</RCC>

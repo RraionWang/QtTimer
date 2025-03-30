@@ -13,12 +13,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->timer->display("00:00:00");
     connect(&timer, &QTimer::timeout, this, &MainWindow::onTimeout);
     timeCnt= 0 ;
-      ui->bt_start->setText("开始计时");
+
 
     // 初始化表格
     ui->tb_record->setColumnCount(4); // 设置四列
     ui->tb_record->setHorizontalHeaderLabels({"开始时间", "停止时间", "时间差", "备注"}); // 设置表头
     ui->tb_record->horizontalHeader()->setStretchLastSection(true); // 自动拉伸最后一列
+
+    isAlwaysOnTop = true; // 默认悬浮
+    isStartRun  = true ;
+
+    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint); // 设置悬浮标志
+    show(); // 重新显示窗口
 
 
 }
@@ -30,18 +36,29 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_bt_start_clicked()
 {
-    QString currentText = ui->bt_start->text();
 
-    if (currentText.contains("开始计时")) {
+
+    if (isStartRun) {
         // 开始计时
-        ui->bt_start->setText("停止计时");
+
+
+        QIcon icon(":/assets/pause"); // 替换为你的图标路径
+        ui->bt_start->setIcon(icon);
+
+        ui->bt_start->setToolTip("停止计时");
+
+
         timer.start(1000); // 启动定时器
 
         // 记录开始时间
         startTime = QDateTime::currentDateTime();
     } else {
         // 停止计时
-        ui->bt_start->setText("开始计时");
+        QIcon icon(":/assets/run"); // 替换为你的图标路径
+        ui->bt_start->setIcon(icon);
+
+                ui->bt_start->setToolTip("开始计时");
+
         timer.stop(); // 停止定时器
 
         // 获取当前时间作为停止时间
@@ -79,13 +96,18 @@ void MainWindow::on_bt_start_clicked()
         ui->timer->display("00:00:00");
         timeCnt = 0;
     }
+
+    isStartRun= !isStartRun;
 }
 
 void MainWindow::on_bt_restart_clicked()
 {
     timer.stop();
     timeCnt = 0 ;
-    ui->bt_start->setText("开始计时");
+
+    QIcon icon(":/assets/run"); // 替换为你的图标路径
+    ui->bt_start->setIcon(icon);
+
     ui->timer->display("00:00:00");
 
 }
@@ -180,3 +202,60 @@ void MainWindow::on_bt_save_csv_clicked()
     // 提示保存成功
     QMessageBox::information(this, "保存成功", "数据已成功保存到 CSV 文件！");
 }
+
+void MainWindow::on_bt_stick_clicked()
+{
+    // 切换悬浮状态
+    isAlwaysOnTop = !isAlwaysOnTop;
+
+    if (isAlwaysOnTop) {
+
+
+               ui->bt_stick->setToolTip("悬浮窗口");
+        QIcon icon(":/assets/unstcky"); // 替换为你的图标路径
+        ui->bt_stick->setIcon(icon);
+
+
+
+        // 启用悬浮
+        setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
+    } else {
+        // 禁用悬浮
+
+                ui->bt_stick->setToolTip("钉住窗口");
+        QIcon icon(":/assets/sticy"); // 替换为你的图标路径
+        ui->bt_stick->setIcon(icon);
+        setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint);
+    }
+
+    // 重新显示窗口以使更改生效
+    show();
+}
+
+
+void MainWindow::on_bt_help_clicked()
+{
+    // 创建一个消息框
+    QMessageBox msgBox(this);
+
+    // 设置对话框标题
+    msgBox.setWindowTitle("帮助");
+
+    // 设置对话框内容（使用 HTML 支持超链接）
+    QString message = "欢迎使用r.Timer！<br>"
+                      "作者网站：<a href='https://rraionwang.github.io/'>https://rraionwang.github.io/</a><br>";
+    msgBox.setText(message);
+
+    // 设置对话框图标
+    msgBox.setIcon(QMessageBox::Information);
+
+    // 设置为富文本模式以支持 HTML
+    msgBox.setTextFormat(Qt::RichText);
+
+
+    // 显示消息框
+    msgBox.exec();
+}
+
+
+

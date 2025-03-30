@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-MinSizeRel-658f6af87cf0fead8aa9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "tiemr",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "tiemr::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tiemr-MinSizeRel-998befe124d7363657a5.json",
+					"name" : "tiemr",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tiemr_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tiemr_autogen-MinSizeRel-562d50cf06799cde0320.json",
+					"name" : "tiemr_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tiemr_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tiemr_autogen_timestamp_deps-MinSizeRel-de4b7b53f5d313d5e341.json",
+					"name" : "tiemr_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/17347/Documents/tiemr/build/Desktop_Qt_6_8_0_MinGW_64_bit-MinSizeRel",
+		"source" : "C:/Users/17347/Documents/tiemr"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

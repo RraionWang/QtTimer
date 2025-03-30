@@ -32,6 +32,12 @@ private slots:
 
     void on_bt_save_csv_clicked();
 
+    void on_bt_stick_clicked();
+
+    void on_bt_help_clicked();
+
+
+
 private:
     Ui::MainWindow *ui;
     QTimer timer ;
@@ -40,6 +46,10 @@ private:
     QString secondsToTime(int totalSeconds) ;
 
     QDateTime startTime; // 记录开始时间
+
+    bool   isAlwaysOnTop  ;
+    bool  isStartRun ;
+
 
 };
 #endif // MAINWINDOW_H
