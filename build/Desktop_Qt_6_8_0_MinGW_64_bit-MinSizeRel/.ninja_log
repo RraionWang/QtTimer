@@ -1,9 +1,0 @@
-# ninja log v6
-6	757	7650434957400852	tiemr_autogen/timestamp	dadac709438e861a
-6	757	7650434957400852	tiemr_autogen/mocs_compilation.cpp	dadac709438e861a
-6	757	7650434957400852	C:/Users/17347/Documents/tiemr/build/Desktop_Qt_6_8_0_MinGW_64_bit-MinSizeRel/tiemr_autogen/timestamp	dadac709438e861a
-6	757	7650434957400852	C:/Users/17347/Documents/tiemr/build/Desktop_Qt_6_8_0_MinGW_64_bit-MinSizeRel/tiemr_autogen/mocs_compilation.cpp	dadac709438e861a
-761	2031	7650434958472618	CMakeFiles/tiemr.dir/tiemr_autogen/mocs_compilation.cpp.obj	8e1074f35f00f3fc
-776	2078	7650434958627832	CMakeFiles/tiemr.dir/main.cpp.obj	6b727376f311b685
-790	2620	7650434958767788	CMakeFiles/tiemr.dir/mainwindow.cpp.obj	12fe60036c1b8ed3
-2621	2814	7650434977073233	tiemr.exe	dda55111d3101061
